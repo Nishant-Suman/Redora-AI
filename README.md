@@ -2,6 +2,8 @@
 **Created by R.M.Nishant Suman**  
 📧 Email: [rmnishantsuman@gmail.com](mailto:rmnishantsuman@gmail.com) | 📞 Phone: [+91 9508222833](tel:+919508222833)
 
+🔗 **GitHub Repository:** [https://github.com/Nishant-Suman/Redora-AI](https://github.com/Nishant-Suman/Redora-AI)
+
 An enterprise-grade, end-to-end AI system that converts scanned and digital PDF documents or images into natural, human-like voice synthesis with high-DPI document rendering, Computer Vision preprocessing (Deskewing, Denoising, CLAHE enhancement, Binarization), Multi-Engine OCR (EasyOCR & Direct Text Extraction), NLP Text Cleaning, and Neural Text-to-Speech synthesis with acoustic waveform visualization.
 
 ---
