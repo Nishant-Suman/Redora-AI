@@ -159,3 +159,5 @@ Text-Voice Ai/
 | `/api/tts` | `POST` | Synthesizes speech using Edge-TTS with speed & pitch controls |
 | `/api/sample/<sample_type>` | `GET` | Loads 1-click sample document (`pdf` or `image`) |
 | `/api/export/<doc_id>/<type>` | `GET` | Downloads generated assets (`audio`, `srt`, `transcript`, `zip`) |
+
+**Visit website** https://redora-ai.onrender.com
