@@ -1,0 +1,126 @@
+/* Custom Modern Theme for PDF Voice Reader AI */
+
+:root {
+    --primary-color: #6366F1;
+    --primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+    --surface-bg: rgba(30, 41, 59, 0.7);
+    --surface-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+.main .block-container {
+    padding-top: 1.8rem;
+    padding-bottom: 3rem;
+    max-width: 1200px;
+}
+
+/* Hero Banner */
+.hero-header {
+    background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px 30px;
+    margin-bottom: 24px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #FFFFFF, #E0E7FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: #C7D2FE;
+    font-size: 1.05rem;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.badge-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(99, 102, 241, 0.3);
+    border: 1px solid rgba(129, 140, 248, 0.4);
+    border-radius: 20px;
+    color: #E0E7FF;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Metric Cards */
+.metric-box {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.metric-val {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #818CF8;
+    margin: 0;
+}
+
+.metric-lbl {
+    font-size: 0.85rem;
+    color: #94A3B8;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Workflow Step Box */
+.step-badge {
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+/* Audio Player Container */
+.audio-studio-card {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Sentence Highlight */
+.sentence-item {
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #6366F1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+}
+
+.sentence-item:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-left-color: #EC4899;
+}

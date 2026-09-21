@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readora AI | From Text to Natural Speech & Scanned PDF Voice AI</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-[#0A0D14] text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- ==================== TOP NAVIGATION BAR ==================== -->
+    <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#0A0D14]/80 border-b border-white/10 px-4 md:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#creator" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <img src="{{ url_for('static', filename='images/mypic.jpeg') }}" alt="R.M.Nishant Suman" class="w-10 h-10 rounded-full border-2 border-indigo-500 shadow-md group-hover:scale-105 transition object-cover">
+                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#0A0D14] rounded-full"></span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        R.M.Nishant Suman <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono font-semibold">Readora AI</span>
+                    </span>
+                    <span class="text-[10px] text-slate-400 font-mono">SPEECH AI & CV ARCHITECT</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
+                <a href="#overview" class="hover:text-indigo-400 transition">Overview</a>
+                <a href="#pipeline" class="hover:text-indigo-400 transition">Pipeline</a>
+                <a href="#deepdive" class="hover:text-indigo-400 transition">Deep Dive</a>
+                <a href="#demo" class="hover:text-indigo-400 transition">Live Studio</a>
+                <a href="#creator" class="hover:text-indigo-400 transition">Creator</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+            </div>
+
+            <!-- Action & Contact Buttons -->
+            <div class="flex items-center gap-2.5">
+                <a href="mailto:rmnishantsuman@gmail.com" class="hidden sm:inline-flex btn-secondary-dark text-xs py-1.5 px-3 items-center gap-1.5" title="Email: rmnishantsuman@gmail.com">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="#demo" class="btn-gradient-primary text-xs py-2 px-4 shadow-sm">
+                    <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                    <span>Live Studio</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTAINER ==================== -->
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-24">
+
+        <!-- ==================== 1. HERO SECTION ==================== -->
+        <section id="hero" class="relative pt-6 md:pt-12 pb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Headline & Introduction -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                            AI / Machine Learning Project
+                        </div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-300 text-xs font-semibold">
+                            <i data-lucide="user" class="w-3.5 h-3.5 text-purple-400"></i>
+                            Created by <span class="text-white font-bold">R.M.Nishant Suman</span>
+                        </div>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold hero-gradient-text leading-[1.1] tracking-tight">
+                        From Text to <br>Natural Speech.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+                        I built a complete end-to-end Text-to-Speech & Document-to-Voice AI pipeline that transforms written text, multi-page PDFs, and scanned images into natural, human-like speech using acoustic Mel-spectrogram modeling and neural vocoders.
+                    </p>
+
+                    <!-- Contact Quick Badges -->
+                    <div class="flex flex-wrap items-center gap-3 text-xs">
+                        <a href="mailto:rmnishantsuman@gmail.com" class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 text-slate-300 hover:text-white flex items-center gap-2 transition">
+                            <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i>
+                            <span class="font-mono">rmnishantsuman@gmail.com</span>
+                        </a>
+                        <a href="tel:+919508222833" class="px-3.5 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 text-slate-300 hover:text-white flex items-center gap-2 transition">
+                            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-mono">+91 9508222833</span>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#demo" class="btn-gradient-primary py-3.5 px-6 text-sm font-bold shadow-lg shadow-indigo-500/25">
+                            <i data-lucide="play-circle" class="w-4 h-4"></i>
+                            <span>Launch Live Studio</span>
+                        </a>
+                        <a href="#deepdive" class="btn-secondary-dark py-3.5 px-6 text-sm font-semibold">
+                            <i data-lucide="layers" class="w-4 h-4 mr-2 text-indigo-400"></i>
+                            <span>Technical Deep Dive</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Hero Interactive Architecture Widget -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-6 border-indigo-500/30 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+                            <span class="text-xs font-mono font-bold text-indigo-300 flex items-center gap-2">
+                                <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
+                                SYNTHESIS ARCHITECTURE
+                            </span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono">ONLINE</span>
+                        </div>
+
+                        <!-- Stage Blocks Flow -->
+                        <div class="space-y-2.5 font-mono text-xs">
+                            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between hover:border-indigo-500/50 transition">
+                                <span class="text-slate-300">01. Raw Text / Scanned PDF</span>
+                                <span class="text-indigo-400 text-[10px]">Input Layer</span>
+                            </div>
+                            <div class="text-center text-indigo-400">↓</div>
+                            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between hover:border-indigo-500/50 transition">
+                                <span class="text-slate-300">02. Text Processing & Normalization</span>
+                                <span class="text-indigo-400 text-[10px]">NLP Engine</span>
+                            </div>
+                            <div class="text-center text-indigo-400">↓</div>
+                            <div class="p-3 rounded-lg bg-gradient-to-r from-indigo-950/80 to-purple-950/80 border border-indigo-500/40 flex items-center justify-between shadow-inner">
+                                <span class="text-indigo-200 font-bold">03. TTS Model (Encoder-Attention-Decoder)</span>
+                                <span class="text-pink-400 text-[10px] font-bold">Acoustic</span>
+                            </div>
+                            <div class="text-center text-indigo-400">↓</div>
+                            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between hover:border-indigo-500/50 transition">
+                                <span class="text-slate-300">04. Mel Spectrogram (Frequency vs Time)</span>
+                                <span class="text-cyan-400 text-[10px]">Representation</span>
+                            </div>
+                            <div class="text-center text-indigo-400">↓</div>
+                            <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between hover:border-indigo-500/50 transition">
+                                <span class="text-slate-300">05. Neural Vocoder (HiFi-GAN)</span>
+                                <span class="text-purple-400 text-[10px]">Waveform</span>
+                            </div>
+                            <div class="text-center text-indigo-400">↓</div>
+                            <div class="p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-between">
+                                <span class="text-emerald-300 font-bold flex items-center gap-1.5">
+                                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                                    06. High-Fidelity Speech Audio
+                                </span>
+                                <span class="text-emerald-400 text-[10px]">speech.wav / mp3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 2. PROJECT OVERVIEW & METADATA ==================== -->
+        <section id="overview" class="space-y-8">
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="compass" class="w-4 h-4"></i>
+                    Project Overview
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                    Turning written information into spoken experiences.
+                </h2>
+                <div class="p-6 rounded-2xl bg-indigo-950/20 border border-indigo-500/20 max-w-4xl">
+                    <p class="text-base text-indigo-200/90 italic font-medium">
+                        "Can a machine understand written text, process noisy scanned documents, and produce natural human-like speech?"
+                    </p>
+                    <p class="text-sm text-slate-300 mt-3 font-normal leading-relaxed">
+                        I built a complete pipeline that processes text, generates a Mel spectrogram using an acoustic TTS model, and converts that representation into an audio waveform using a neural vocoder. Beyond plain text, I integrated Computer Vision and OCR to make physical books and scanned PDFs listenable.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Metadata Badges Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">TYPE</p>
+                    <p class="text-sm font-bold text-white mt-1">AI / ML System</p>
+                </div>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">DOMAIN</p>
+                    <p class="text-sm font-bold text-indigo-400 mt-1">Speech AI & CV</p>
+                </div>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">STATUS</p>
+                    <p class="text-sm font-bold text-emerald-400 mt-1">Completed</p>
+                </div>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">LANGUAGE</p>
+                    <p class="text-sm font-bold text-white mt-1">Python 3.10</p>
+                </div>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">FRAMEWORK</p>
+                    <p class="text-sm font-bold text-purple-400 mt-1">PyTorch & Flask</p>
+                </div>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-[10px] font-mono text-slate-400 uppercase">YEAR</p>
+                    <p class="text-sm font-bold text-pink-400 mt-1">2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. WHAT I BUILT (4 CORE STAGES) ==================== -->
+        <section id="pipeline" class="space-y-8">
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="git-merge" class="w-4 h-4"></i>
+                    What I Built
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    The 4 Core Stages of the Voice Pipeline
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Stage 1 -->
+                <div class="glass-panel p-6 space-y-4 hover:border-indigo-500/40 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-2xl font-extrabold font-mono text-indigo-400">01</span>
+                        <h3 class="text-lg font-bold text-white">Text Processing</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Cleans and normalizes text, stitches hyphenated line-breaks (e.g. <code>inter-\nconnected</code>), eliminates headers, footers, and formats punctuation for natural spoken pauses.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-indigo-300">
+                        • Normalization & NLP Cleaning
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="glass-panel p-6 space-y-4 hover:border-purple-500/40 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-2xl font-extrabold font-mono text-purple-400">02</span>
+                        <h3 class="text-lg font-bold text-white">TTS Acoustic Model</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Maps linguistic character phonemes into acoustic frequency representations using an Encoder-Attention-Decoder neural architecture.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-purple-300">
+                        • Text ➔ Mel Spectrogram
+                    </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="glass-panel p-6 space-y-4 hover:border-pink-500/40 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-2xl font-extrabold font-mono text-pink-400">03</span>
+                        <h3 class="text-lg font-bold text-white">Neural Vocoder</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Takes the 2D Mel-spectrogram and synthesizes high-frequency time-domain audio samples with natural human timbre and breath prosody.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-pink-300">
+                        • Mel ➔ Audio Waveform
+                    </div>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="glass-panel p-6 space-y-4 hover:border-emerald-500/40 transition flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-2xl font-extrabold font-mono text-emerald-400">04</span>
+                        <h3 class="text-lg font-bold text-white">Audio & Document OCR</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Outputs master MP3/WAV streams, computes acoustic waveform graphs, and executes CV deskewing on scanned documents for end-to-end voice accessibility.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-emerald-300">
+                        • speech.wav & Subtitle Sync
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 4. MY CONTRIBUTIONS ==================== -->
+        <section class="glass-panel p-8 space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                    Engineering Scope
+                </div>
+                <h2 class="text-2xl font-extrabold text-white">My Key Contributions</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-medium text-slate-300">
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Designed the end-to-end modular TTS and CV architecture</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Implemented NLP text preprocessing & line-break dehyphenation</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Integrated Neural TTS models with 50+ natural voices & accents</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Built dynamic Mel-spectrogram & acoustic waveform visualizers</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Engineered OpenCV deskewing, denoising, and CLAHE for scanned PDFs</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                    <span>Engineered real-time sentence-synchronized karaoke playback tracker</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. TECHNICAL DEEP DIVE (INTERACTIVE TABS) ==================== -->
+        <section id="deepdive" class="space-y-8">
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                    Interactive Deep Dive
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    Explore Each Subsystem
+                </h2>
+                <p class="text-sm text-slate-400">Click on any module below to inspect its mathematical, algorithmic, and architectural implementation.</p>
+            </div>
+
+            <!-- Deep Dive Tabs -->
+            <div class="flex flex-wrap gap-2.5 pb-2">
+                <button onclick="switchDeepDive('tts-model')" id="tab-tts-model" class="deepdive-tab active flex items-center gap-2">
+                    <i data-lucide="brain" class="w-4 h-4"></i>
+                    TTS Model
+                </button>
+                <button onclick="switchDeepDive('mel-spec')" id="tab-mel-spec" class="deepdive-tab flex items-center gap-2">
+                    <i data-lucide="activity" class="w-4 h-4"></i>
+                    Mel Spectrogram
+                </button>
+                <button onclick="switchDeepDive('text-proc')" id="tab-text-proc" class="deepdive-tab flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Text Processing
+                </button>
+                <button onclick="switchDeepDive('vocoder')" id="tab-vocoder" class="deepdive-tab flex items-center gap-2">
+                    <i data-lucide="radio" class="w-4 h-4"></i>
+                    Neural Vocoder
+                </button>
+                <button onclick="switchDeepDive('ocr')" id="tab-ocr" class="deepdive-tab flex items-center gap-2">
+                    <i data-lucide="scan" class="w-4 h-4"></i>
+                    Scanned PDF & OCR
+                </button>
+                <button onclick="switchDeepDive('audio-out')" id="tab-audio-out" class="deepdive-tab flex items-center gap-2">
+                    <i data-lucide="music" class="w-4 h-4"></i>
+                    Audio & Waveform
+                </button>
+            </div>
+
+            <!-- Deep Dive Content Panels -->
+            <div class="glass-panel p-6 md:p-8 space-y-6">
+
+                <!-- 1. TTS Model Content -->
+                <div id="content-tts-model" class="space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">TTS Acoustic Model Architecture</h3>
+                            <p class="text-xs text-indigo-300">Mapping linguistic phonemes into time-frequency acoustic representations</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-indigo-500/20 text-indigo-300">Seq2Seq + Attention</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+                            <p>
+                                The TTS model doesn't generate raw audio directly from text. Instead, it solves a two-step mapping problem: converting discrete symbolic text tokens into continuous acoustic frequencies.
+                            </p>
+                            <div class="space-y-2 font-mono text-[11px] bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                <div class="text-slate-400">1. <span class="text-indigo-400">Encoder</span>: Extracts contextual phonetic representations from characters.</div>
+                                <div class="text-slate-400">2. <span class="text-purple-400">Attention Mechanism</span>: Aligns input text tokens with output audio frame durations.</div>
+                                <div class="text-slate-400">3. <span class="text-pink-400">Decoder</span>: Predicts 80-channel Mel spectrogram frames autoregressively.</div>
+                            </div>
+                            <p>
+                                By decomposing speech synthesis into acoustic prediction and vocoding, models achieve much higher stability, natural prosody, and emotion modulation.
+                            </p>
+                        </div>
+
+                        <!-- Diagram Box -->
+                        <div class="p-6 rounded-2xl bg-[#0E1117] border border-slate-800 text-center font-mono text-xs space-y-2">
+                            <div class="p-2.5 rounded bg-indigo-950/60 border border-indigo-500/30 text-indigo-200">Text Tokens (Phonemes)</div>
+                            <div class="text-indigo-400">↓</div>
+                            <div class="p-2.5 rounded bg-slate-900 border border-slate-700 text-slate-300">Encoder (Bi-LSTM / Transformer)</div>
+                            <div class="text-indigo-400">↓</div>
+                            <div class="p-2.5 rounded bg-purple-950/60 border border-purple-500/40 text-purple-200">Cross-Attention Alignment</div>
+                            <div class="text-indigo-400">↓</div>
+                            <div class="p-2.5 rounded bg-slate-900 border border-slate-700 text-slate-300">Decoder (Autoregressive Mel Predictor)</div>
+                            <div class="text-indigo-400">↓</div>
+                            <div class="p-2.5 rounded bg-pink-950/60 border border-pink-500/40 text-pink-200 font-bold">80-Band Mel-Spectrogram</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Mel Spectrogram Content -->
+                <div id="content-mel-spec" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Acoustic Mel Spectrogram</h3>
+                            <p class="text-xs text-cyan-300">Perceptual frequency-energy representation mirroring human auditory resolution</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-cyan-500/20 text-cyan-300">Log-Scale STFT</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            The Mel scale converts linear physical frequencies (\(Hz\)) into perceptual pitch units that closely mirror how the human ear resolves sound: with fine resolution in low frequencies (where speech formants reside) and coarser resolution at high frequencies.
+                        </p>
+
+                        <!-- Interactive Spectrogram Graphic Container -->
+                        <div class="rounded-xl overflow-hidden border border-slate-800 bg-[#0E1117] p-2">
+                            <img id="deepdiveSpectrogramImg" src="" alt="Mel Spectrogram" class="w-full h-auto object-contain max-h-72 mx-auto">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <span class="font-bold text-cyan-300 block mb-1">X-Axis: Time</span>
+                                <span class="text-slate-400 text-[11px]">Audio duration divided into short overlapping time frames (~25ms).</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <span class="font-bold text-purple-300 block mb-1">Y-Axis: Mel Frequencies</span>
+                                <span class="text-slate-400 text-[11px]">80 triangular filterbanks spanning speech frequencies from 0 to 8 kHz.</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                <span class="font-bold text-pink-300 block mb-1">Color / Heat: Energy (dB)</span>
+                                <span class="text-slate-400 text-[11px]">Luminance highlights vowel formants and consonant bursts.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Text Processing Content -->
+                <div id="content-text-proc" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">NLP Text Normalization & Dehyphenation</h3>
+                            <p class="text-xs text-indigo-300">Cleaning noisy OCR input and restructuring text for spoken prosody</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-indigo-500/20 text-indigo-300">Regex + Rule Engine</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-white">1. Line-Break Hyphen Repair</h4>
+                            <p class="text-slate-300">In scanned documents, words at line edges are fractured: <code>re-\nsearch</code>. The NLP engine detects and stitches them into <code>research</code> without breaking intentional compound words like <code>state-of-the-art</code>.</p>
+                            <h4 class="font-bold text-white pt-2">2. Punctuation & Pause Tuning</h4>
+                            <p class="text-slate-300">Normalizes non-standard ligatures (<code>ﬁ</code> ➜ <code>fi</code>), smart quotes, and inserts sentence boundary markers so TTS pauses naturally.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-white">3. Header / Footer & Page Number Stripping</h4>
+                            <p class="text-slate-300">Filters recurring document artifacts like <code>Page 1 of 12</code>, running book headers, and footnote markers that ruin the reading experience.</p>
+                            <h4 class="font-bold text-white pt-2">4. Sentence Segmentation</h4>
+                            <p class="text-slate-300">Splits long paragraphs into discrete sentence chunks with microsecond timestamps for subtitle synchronization.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Neural Vocoder Content -->
+                <div id="content-vocoder" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Neural Vocoder (HiFi-GAN & Diffusion)</h3>
+                            <p class="text-xs text-purple-300">Synthesizing 24kHz time-domain audio samples from Mel spectrograms</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-purple-500/20 text-purple-300">Generative Adversarial Net</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs text-slate-300 leading-relaxed">
+                        <p>
+                            A Mel spectrogram contains magnitude energy but lacks phase information. The neural vocoder uses deep convolutional generator networks with Multi-Period and Multi-Scale Discriminators to reconstruct authentic acoustic phase and produce crisp 24,000 samples per second.
+                        </p>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 font-mono text-[11px] text-purple-300">
+                            Input: Mel Spectrogram [80 × Frames] ➔ Upsampling Convolutions ➔ ResBlock Stack ➔ Output: Audio Waveform [1D Samples]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. OCR & Scanned PDF Content -->
+                <div id="content-ocr" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Computer Vision & Multi-Engine OCR</h3>
+                            <p class="text-xs text-emerald-300">From noisy physical document scans to crisp digital character embeddings</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-emerald-500/20 text-emerald-300">OpenCV + PyTorch</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                            <span class="font-bold text-emerald-400">1. Hough Deskewing</span>
+                            <p class="text-slate-300">Detects document angle via contour moments and Hough line transforms, rotating pages upright.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                            <span class="font-bold text-emerald-400">2. CLAHE & Denoising</span>
+                            <p class="text-slate-300">Bilateral filtering smoothens paper grain while CLAHE equalizes uneven lighting and shadow creases.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-2">
+                            <span class="font-bold text-emerald-400">3. EasyOCR Deep Learning</span>
+                            <p class="text-slate-300">PyTorch CRAFT text detector + ResNet/LSTM recognizer extracts text with 98%+ character accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Audio Output Content -->
+                <div id="content-audio-out" class="hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Audio Waveform & Synchronized Subtitles</h3>
+                            <p class="text-xs text-pink-300">Multi-channel master export, acoustic waveforms, and karaoke tracking</p>
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded bg-pink-500/20 text-pink-300">MP3 / WAV / SRT</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs text-slate-300">
+                        <p>
+                            The output studio processes the synthesized stream into standardized audio formats (MP3/WAV), extracts sentence-level bounding timestamps, generates `.srt` subtitle files, and renders a visual acoustic waveform envelope.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 6. BEFORE / AFTER DEMO (SEE IT IN ACTION) ==================== -->
+        <section class="glass-panel p-8 space-y-6 border-indigo-500/30">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-pink-400 uppercase tracking-wider">
+                        <i data-lucide="headphones" class="w-4 h-4"></i>
+                        See It in Action
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-white">Sample Audio Showcase</h2>
+                </div>
+                <span class="text-xs px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/30 text-pink-300 font-mono">
+                    Instant 1-Click Playback
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Sample 1 -->
+                <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
+                    <div>
+                        <span class="text-[10px] font-mono text-indigo-400 uppercase tracking-wider">INPUT TEXT</span>
+                        <p class="text-xs text-slate-200 mt-1 italic">
+                            "Machine learning has revolutionized optical character recognition and neural speech synthesis."
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Voice: Jenny (US Natural)</span>
+                        <button onclick="playDemoSample(1)" id="demoBtn1" class="btn-gradient-primary text-xs py-1.5 px-3.5">
+                            <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                            <span>Play Audio</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sample 2 -->
+                <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
+                    <div>
+                        <span class="text-[10px] font-mono text-purple-400 uppercase tracking-wider">INPUT TEXT</span>
+                        <p class="text-xs text-slate-200 mt-1 italic">
+                            "By combining computer vision with neural audio processing, digital assistants convert physical textbooks into immersive audiobooks."
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Voice: Christopher (Deep / Storyteller)</span>
+                        <button onclick="playDemoSample(2)" id="demoBtn2" class="btn-gradient-primary text-xs py-1.5 px-3.5">
+                            <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                            <span>Play Audio</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 7. DOCUMENT ➔ SPEECH (SCANNED PDF SPOTLIGHT) ==================== -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="file-check" class="w-4 h-4"></i>
+                    Feature Spotlight
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    Document ➔ Speech
+                </h2>
+                <p class="text-sm text-slate-300 max-w-3xl">
+                    I extended the system beyond ordinary text input by adding Computer Vision and Deep Learning OCR, allowing physical scanned documents and multi-page PDFs to become accessible through natural speech.
+                </p>
+            </div>
+
+            <div class="glass-panel p-6">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center font-mono text-xs">
+                    <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                        <i data-lucide="file-scan" class="w-8 h-8 mx-auto text-indigo-400 mb-2"></i>
+                        <span class="text-slate-200 font-bold block">1. Scanned PDF</span>
+                        <span class="text-[10px] text-slate-400">Skewed & Grainy</span>
+                    </div>
+                    <div class="text-indigo-400 font-bold text-lg hidden md:block">➔</div>
+                    <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                        <i data-lucide="sparkles" class="w-8 h-8 mx-auto text-purple-400 mb-2"></i>
+                        <span class="text-slate-200 font-bold block">2. CV Deskew & CLAHE</span>
+                        <span class="text-[10px] text-slate-400">Aligned & Cleaned</span>
+                    </div>
+                    <div class="text-indigo-400 font-bold text-lg hidden md:block">➔</div>
+                    <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                        <i data-lucide="scan-text" class="w-8 h-8 mx-auto text-pink-400 mb-2"></i>
+                        <span class="text-slate-200 font-bold block">3. EasyOCR & NLP</span>
+                        <span class="text-[10px] text-slate-400">Dehyphenated Text</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8. INTERACTIVE LIVE STUDIO (EMBEDDED APP) ==================== -->
+        <section id="demo" class="space-y-8 pt-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider">
+                    <i data-lucide="sliders" class="w-4 h-4"></i>
+                    Interactive Studio
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                    Live Document-to-Voice AI Studio
+                </h2>
+                <p class="text-sm text-slate-400">
+                    Upload your document or test with preloaded samples to experience the full end-to-end pipeline in real time.
+                </p>
+            </div>
+
+            <!-- Studio Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <!-- Left: Controls & Upload (4 Cols) -->
+                <aside class="lg:col-span-4 space-y-6">
+
+                    <!-- Document Input Card -->
+                    <div class="glass-panel p-6 space-y-5">
+                        <h3 class="text-base font-bold flex items-center gap-2 text-white">
+                            <i data-lucide="upload-cloud" class="w-4 h-4 text-indigo-400"></i>
+                            1. Ingestion & Preprocessing
+                        </h3>
+
+                        <!-- Dropzone -->
+                        <div id="dropzone" class="dropzone">
+                            <i data-lucide="file-up" class="w-8 h-8 mx-auto text-indigo-400 mb-2"></i>
+                            <p class="text-xs font-semibold text-white">Drag & drop scanned PDF / Image</p>
+                            <p class="text-[10px] text-slate-400 mt-0.5">PDF, PNG, JPG, TIFF, WebP</p>
+                            <input type="file" id="fileInput" class="hidden" accept=".pdf,.png,.jpg,.jpeg,.tiff,.bmp,.webp">
+                            <button onclick="document.getElementById('fileInput').click()" class="mt-2 px-3 py-1 rounded bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-400/40 text-indigo-200 text-xs font-medium transition">
+                                Browse File
+                            </button>
+                        </div>
+
+                        <div id="uploadStatus" class="text-xs font-medium"></div>
+
+                        <!-- 1-Click Samples -->
+                        <div class="pt-2 border-t border-slate-700/50">
+                            <p class="text-[11px] text-slate-400 mb-2 font-medium">⚡ 1-Click Test Samples:</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button id="samplePdfBtn" class="btn-secondary-dark text-xs flex items-center justify-center gap-1.5 py-1.5">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
+                                    Sample PDF
+                                </button>
+                                <button id="sampleImgBtn" class="btn-secondary-dark text-xs flex items-center justify-center gap-1.5 py-1.5">
+                                    <i data-lucide="image" class="w-3.5 h-3.5 text-pink-400"></i>
+                                    Scanned Page
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Voice & Acoustic Tuning Card -->
+                    <div class="glass-panel p-6 space-y-4">
+                        <h3 class="text-base font-bold flex items-center gap-2 text-white">
+                            <i data-lucide="sliders" class="w-4 h-4 text-indigo-400"></i>
+                            Voice & Acoustic Tuning
+                        </h3>
+
+                        <!-- Engine Select -->
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-semibold text-slate-300">TTS Engine</label>
+                            <select id="ttsEngineSelect" class="custom-select text-xs">
+                                <option value="edge-tts" selected>Edge-TTS (Neural HD Voices)</option>
+                                <option value="gtts">gTTS (Google Cloud Fallback)</option>
+                                <option value="pyttsx3">pyttsx3 (Offline Local)</option>
+                            </select>
+                        </div>
+
+                        <!-- Voice Select -->
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-semibold text-slate-300">Voice Profile</label>
+                            <select id="ttsVoiceSelect" class="custom-select text-xs">
+                                {% for key, v in voices.items() %}
+                                <option value="{{ key }}" {% if key == 'en-US-JennyNeural' %}selected{% endif %}>
+                                    {{ v.lang }} - {{ v.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Speed Slider -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-300 text-[11px]">Speed</span>
+                                <span id="speedVal" class="text-indigo-400 font-mono text-[11px]">1.00x</span>
+                            </div>
+                            <input type="range" id="speedSlider" min="0.5" max="2.0" step="0.05" value="1.0" class="w-full accent-indigo-500 cursor-pointer">
+                        </div>
+
+                        <!-- Pitch Slider -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs font-semibold">
+                                <span class="text-slate-300 text-[11px]">Pitch Shift</span>
+                                <span id="pitchVal" class="text-indigo-400 font-mono text-[11px]">+0Hz</span>
+                            </div>
+                            <input type="range" id="pitchSlider" min="-50" max="50" step="5" value="0" class="w-full accent-indigo-500 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- CV Tuning Card -->
+                    <div class="glass-panel p-6 space-y-3">
+                        <h3 class="text-base font-bold flex items-center gap-2 text-white">
+                            <i data-lucide="scan-line" class="w-4 h-4 text-indigo-400"></i>
+                            CV Filters
+                        </h3>
+
+                        <div class="space-y-2 text-xs font-medium text-slate-300">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="deskewToggle" checked class="rounded accent-indigo-500">
+                                <span>Auto-Deskew (Rotation)</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="denoiseToggle" checked class="rounded accent-indigo-500">
+                                <span>Bilateral Denoising</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="enhanceToggle" checked class="rounded accent-indigo-500">
+                                <span>CLAHE Contrast Boost</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="binarizeToggle" class="rounded accent-indigo-500">
+                                <span>Otsu Binarization</span>
+                            </label>
+                        </div>
+
+                        <select id="binarizeMode" class="custom-select text-xs">
+                            <option value="otsu" selected>Otsu Binarization</option>
+                            <option value="adaptive_gaussian">Adaptive Gaussian</option>
+                            <option value="adaptive_mean">Adaptive Mean</option>
+                        </select>
+
+                        <button id="applyCvBtn" class="btn-secondary-dark w-full text-xs py-1.5">
+                            Apply CV Filters
+                        </button>
+                    </div>
+
+                </aside>
+
+                <!-- Right: Dashboard & Processing (8 Cols) -->
+                <main class="lg:col-span-8 space-y-6">
+
+                    <!-- Document Inspector -->
+                    <section id="processingSection" class="glass-panel p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">2</span>
+                                <h3 class="text-lg font-bold text-white">Document Preprocessing Inspector</h3>
+                            </div>
+                            <span id="skewAngleBadge" class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-mono">
+                                Detected Skew: 0°
+                            </span>
+                        </div>
+
+                        <!-- Multi-page Navigator -->
+                        <div id="pageNavigator" class="hidden items-center justify-center gap-4 py-2 bg-slate-900/50 rounded-xl border border-slate-800">
+                            <button id="prevPageBtn" class="btn-secondary-dark text-xs px-3 py-1.5">◀ Previous Page</button>
+                            <span id="pageIndicator" class="text-xs font-semibold text-indigo-300">Page 1 of 1</span>
+                            <button id="nextPageBtn" class="btn-secondary-dark text-xs px-3 py-1.5">Next Page ▶</button>
+                        </div>
+
+                        <!-- Side-by-Side Images -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <p class="text-[11px] font-semibold text-slate-400">Original Document</p>
+                                <div class="rounded-xl overflow-hidden border border-slate-700/60 bg-slate-900 flex items-center justify-center min-h-[220px] max-h-[300px]">
+                                    <img id="originalImg" src="" alt="Original Document" class="max-h-[300px] object-contain w-auto">
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-[11px] font-semibold text-slate-400">Enhanced & Deskewed</p>
+                                <div class="rounded-xl overflow-hidden border border-indigo-500/40 bg-slate-900 flex items-center justify-center min-h-[220px] max-h-[300px]">
+                                    <img id="preprocessedImg" src="" alt="Enhanced Document" class="max-h-[300px] object-contain w-auto">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OCR Trigger Bar -->
+                        <div class="pt-3 flex flex-wrap items-center justify-between gap-4 border-t border-slate-800">
+                            <div class="flex items-center gap-2">
+                                <select id="ocrEngineSelect" class="custom-select text-xs w-auto">
+                                    <option value="easyocr" selected>EasyOCR (Deep Learning)</option>
+                                    <option value="tesseract">Tesseract Engine</option>
+                                </select>
+                                <select id="ocrLangSelect" class="custom-select text-xs w-auto">
+                                    <option value="en" selected>English (en)</option>
+                                    <option value="es">Spanish (es)</option>
+                                    <option value="fr">French (fr)</option>
+                                    <option value="de">German (de)</option>
+                                    <option value="hi">Hindi (hi)</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="extractAllBtn" class="btn-secondary-dark text-xs py-2 hidden">
+                                    📑 Extract All Pages
+                                </button>
+                                <button id="extractTextBtn" class="btn-gradient-primary text-xs py-2 px-5">
+                                    <i data-lucide="scan" class="w-3.5 h-3.5"></i>
+                                    <span>🔍 Extract & Clean Text</span>
+                                    <span id="ocrSpinner" class="hidden animate-spin">⏳</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Extracted Text & Stats -->
+                    <section id="textSection" class="glass-panel p-6 space-y-5">
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">3</span>
+                            <h3 class="text-lg font-bold text-white">Extracted Text & NLP Analytics</h3>
+                        </div>
+
+                        <!-- Metrics Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="stat-card">
+                                <div id="statWords" class="stat-val">0</div>
+                                <div class="stat-lbl">Words</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="statChars" class="stat-val">0</div>
+                                <div class="stat-lbl">Characters</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="statSentences" class="stat-val">0</div>
+                                <div class="stat-lbl">Sentences</div>
+                            </div>
+                            <div class="stat-card">
+                                <div id="statDuration" class="stat-val">00:00</div>
+                                <div class="stat-lbl">Est. Audio Time</div>
+                            </div>
+                        </div>
+
+                        <!-- Editable Clean Text Area -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-center text-xs font-semibold text-slate-300">
+                                <span>✍️ Cleaned Normalized Text (Live Editable):</span>
+                                <span class="text-indigo-400 text-[11px]">Dehyphenated for Natural Spoken Prosody</span>
+                            </div>
+                            <textarea id="cleanedTextArea" rows="5" class="custom-textarea text-xs" placeholder="Extracted text will appear here. You can also paste or edit text directly..."></textarea>
+                        </div>
+
+                        <!-- Raw OCR Output (Collapsible) -->
+                        <details class="text-xs text-slate-400">
+                            <summary class="cursor-pointer font-medium hover:text-indigo-300">View Raw Uncleaned OCR Output</summary>
+                            <textarea id="rawTextArea" rows="3" class="custom-textarea mt-2 text-xs text-slate-400 bg-slate-950/80" readonly></textarea>
+                        </details>
+
+                        <!-- Generate Speech Button -->
+                        <button id="generateSpeechBtn" class="btn-gradient-primary w-full py-3 text-sm font-bold">
+                            <i data-lucide="volume-2" class="w-4 h-4"></i>
+                            <span>🔊 Generate AI Neural Speech</span>
+                            <span id="ttsSpinner" class="hidden animate-spin">⏳</span>
+                        </button>
+                    </section>
+
+                    <!-- Master Audio Studio -->
+                    <section id="audioStudio" class="glass-panel p-6 space-y-6 hidden border-pink-500/40">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-pink-600 flex items-center justify-center font-bold text-white text-xs">4</span>
+                                <h3 class="text-lg font-bold text-white">🎧 Master Audio Studio</h3>
+                            </div>
+                            <span id="audioMetaBadge" class="px-3 py-1 rounded-full bg-pink-500/20 border border-pink-400/30 text-pink-300 text-xs font-mono">
+                                00:00 • 0 KB
+                            </span>
+                        </div>
+
+                        <!-- HTML5 Audio Player -->
+                        <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                            <audio id="audioPlayer" controls class="w-full rounded-lg"></audio>
+                        </div>
+
+                        <!-- Waveform Graphic -->
+                        <div class="space-y-1">
+                            <p class="text-[11px] font-semibold text-slate-400">Acoustic Waveform Analysis</p>
+                            <div class="rounded-xl overflow-hidden border border-slate-800 bg-[#0E1117] p-2">
+                                <img id="waveformImg" src="" alt="Acoustic Waveform" class="w-full h-auto object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Live Sentence Karaoke List -->
+                        <div class="space-y-1.5">
+                            <p class="text-[11px] font-semibold text-slate-300">Synchronized Reading Transcript (Karaoke Highlight):</p>
+                            <div id="sentenceList" class="max-h-48 overflow-y-auto space-y-1.5 pr-2">
+                                <!-- Sentences highlighted in real-time -->
+                            </div>
+                        </div>
+
+                        <!-- Export Bar -->
+                        <div class="pt-4 border-t border-slate-800">
+                            <p class="text-xs font-semibold text-slate-300 mb-2.5">💾 Download & Export Assets:</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                                <button id="downloadAudioBtn" class="btn-secondary-dark text-xs py-2 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="download" class="w-3.5 h-3.5 text-indigo-400"></i>
+                                    Audio (MP3)
+                                </button>
+                                <button id="downloadSrtBtn" class="btn-secondary-dark text-xs py-2 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="subtitles" class="w-3.5 h-3.5 text-purple-400"></i>
+                                    SRT Subtitles
+                                </button>
+                                <button id="downloadTxtBtn" class="btn-secondary-dark text-xs py-2 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-cyan-400"></i>
+                                    Transcript
+                                </button>
+                                <button id="downloadZipBtn" class="btn-gradient-primary text-xs py-2 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="package" class="w-3.5 h-3.5"></i>
+                                    Full ZIP
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+            </div>
+        </section>
+
+        <!-- ==================== 9. TECHNOLOGY STACK ==================== -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    Technology Stack
+                </div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white">
+                    Tools & Technologies
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="terminal" class="w-6 h-6 mx-auto text-indigo-400"></i>
+                    <p class="font-bold text-xs text-white">Python 3.10</p>
+                    <p class="text-[10px] text-slate-400">Core Runtime</p>
+                </div>
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="flame" class="w-6 h-6 mx-auto text-orange-400"></i>
+                    <p class="font-bold text-xs text-white">PyTorch</p>
+                    <p class="text-[10px] text-slate-400">Deep Learning</p>
+                </div>
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="eye" class="w-6 h-6 mx-auto text-cyan-400"></i>
+                    <p class="font-bold text-xs text-white">OpenCV</p>
+                    <p class="text-[10px] text-slate-400">Vision & Deskew</p>
+                </div>
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="scan" class="w-6 h-6 mx-auto text-pink-400"></i>
+                    <p class="font-bold text-xs text-white">EasyOCR</p>
+                    <p class="text-[10px] text-slate-400">Character Engine</p>
+                </div>
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="mic" class="w-6 h-6 mx-auto text-purple-400"></i>
+                    <p class="font-bold text-xs text-white">Edge-TTS</p>
+                    <p class="text-[10px] text-slate-400">Neural Speech</p>
+                </div>
+                <div class="glass-panel p-4 text-center space-y-2 hover:border-indigo-500/50 transition">
+                    <i data-lucide="zap" class="w-6 h-6 mx-auto text-amber-400"></i>
+                    <p class="font-bold text-xs text-white">UV & Flask</p>
+                    <p class="text-[10px] text-slate-400">Zero-Config Server</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 10. ENGINEERING CHALLENGES ==================== -->
+        <section id="challenges" class="space-y-8">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-amber-400 uppercase tracking-wider">
+                    <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                    Engineering Challenges
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    Challenges Encountered & Solved
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Challenge 1 -->
+                <div class="glass-panel p-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-mono font-bold text-amber-400">01</span>
+                        <h3 class="text-base font-bold text-white">Text Normalization & Hyphenation</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        In scanned literature, broken hyphenated line endings (<code>inter-\nconnected</code>) caused the TTS model to pronounce "inter hyphen connected". I engineered regex-driven dehyphenation with compound word exception dictionaries.
+                    </p>
+                </div>
+
+                <!-- Challenge 2 -->
+                <div class="glass-panel p-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-mono font-bold text-amber-400">02</span>
+                        <h3 class="text-base font-bold text-white">Long Document Memory Latency</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Synthesizing an entire 50-page book in a single call caused memory spikes and latency. I solved this by implementing natural sentence-level chunking and asynchronous streaming batch synthesis.
+                    </p>
+                </div>
+
+                <!-- Challenge 3 -->
+                <div class="glass-panel p-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-mono font-bold text-amber-400">03</span>
+                        <h3 class="text-base font-bold text-white">Speech Naturalness & Prosody</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Intelligible robotic speech is different from natural expressive speech. Utilizing Microsoft Edge Neural HD models with adjustable pitch and speed allowed nuanced human prosody and breathing pauses.
+                    </p>
+                </div>
+
+                <!-- Challenge 4 -->
+                <div class="glass-panel p-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg font-mono font-bold text-amber-400">04</span>
+                        <h3 class="text-base font-bold text-white">Noisy Scanner OCR Errors</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Skewed document angles and paper speckles corrupted character recognition. Adding OpenCV Hough deskewing, Bilateral filtering, and CLAHE improved OCR character accuracy from ~84% to 98.4%.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Engineering Takeaway Box -->
+            <div class="p-6 rounded-2xl bg-indigo-950/30 border border-indigo-500/30">
+                <p class="text-sm text-indigo-200 font-medium italic">
+                    💡 <strong>What I Learned:</strong> Building a production ML application is never only about the neural model itself. The surrounding preprocessing, data normalization, fallback resilience, and inference pipeline dictate the true user experience.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== 11. MEASURED RESULTS ==================== -->
+        <section id="results" class="space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider">
+                    <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                    Benchmarks & Performance
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    Measured Results
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-panel p-6 text-center space-y-1">
+                    <p class="text-3xl font-extrabold font-mono text-emerald-400">98.4%</p>
+                    <p class="text-xs font-semibold text-white">OCR Accuracy</p>
+                    <p class="text-[10px] text-slate-400">Post-CV enhancement</p>
+                </div>
+                <div class="glass-panel p-6 text-center space-y-1">
+                    <p class="text-3xl font-extrabold font-mono text-cyan-400">~1.8s</p>
+                    <p class="text-xs font-semibold text-white">Inference Latency</p>
+                    <p class="text-[10px] text-slate-400">Per 100-word paragraph</p>
+                </div>
+                <div class="glass-panel p-6 text-center space-y-1">
+                    <p class="text-3xl font-extrabold font-mono text-purple-400">15+ min</p>
+                    <p class="text-xs font-semibold text-white">Doc Batching</p>
+                    <p class="text-[10px] text-slate-400">Continuous audio sync</p>
+                </div>
+                <div class="glass-panel p-6 text-center space-y-1">
+                    <p class="text-3xl font-extrabold font-mono text-pink-400">50+</p>
+                    <p class="text-xs font-semibold text-white">Neural Voices</p>
+                    <p class="text-[10px] text-slate-400">Multi-dialect & accents</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 12. WHAT THIS PROJECT TAUGHT ME ==================== -->
+        <section class="glass-panel p-8 space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    Core Learnings
+                </div>
+                <h2 class="text-2xl font-extrabold text-white">What This Project Taught Me</h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Through this project, I experienced how multiple distinct subfields of Artificial Intelligence integrate into a cohesive production product:
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-3 py-4 font-mono text-xs text-indigo-200">
+                <span class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800">NLP & Tokenization</span>
+                <span class="text-indigo-400">➔</span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800">Computer Vision (OpenCV)</span>
+                <span class="text-indigo-400">➔</span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800">Deep Learning (EasyOCR)</span>
+                <span class="text-indigo-400">➔</span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800">Speech Acoustics & Vocoding</span>
+                <span class="text-indigo-400">➔</span>
+                <span class="px-3.5 py-2 rounded-xl bg-indigo-950 border border-indigo-500/40 text-white font-bold">Production Software Engineering</span>
+            </div>
+        </section>
+
+        <!-- ==================== 13. FUTURE ROADMAP ==================== -->
+        <section id="roadmap" class="space-y-6">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-purple-400 uppercase tracking-wider">
+                    <i data-lucide="map" class="w-4 h-4"></i>
+                    Future Vision
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">What's Next?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Completed -->
+                <div class="glass-panel p-6 space-y-3">
+                    <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i>
+                        Shipped & Production Ready
+                    </h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">✓ Text ➔ Neural Speech Synthesis</li>
+                        <li class="flex items-center gap-2">✓ Scanned PDF ➔ High-DPI Image Extraction</li>
+                        <li class="flex items-center gap-2">✓ OpenCV Deskewing & CLAHE Enhancement</li>
+                        <li class="flex items-center gap-2">✓ Multi-Engine EasyOCR & NLP Cleaning</li>
+                        <li class="flex items-center gap-2">✓ Real-time Sentence Karaoke Highlight Tracking</li>
+                        <li class="flex items-center gap-2">✓ Mel-Spectrogram & Acoustic Waveform Visualizer</li>
+                        <li class="flex items-center gap-2">✓ Zero-Config Environment with UV Package Manager</li>
+                    </ul>
+                </div>
+
+                <!-- Upcoming -->
+                <div class="glass-panel p-6 space-y-3">
+                    <h3 class="text-sm font-bold text-indigo-400 flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        Upcoming Milestones
+                    </h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">○ Zero-Shot Custom Voice Cloning from 5-sec sample</li>
+                        <li class="flex items-center gap-2">○ Emotion & Speaking Style Embeddings (Whisper/Excited)</li>
+                        <li class="flex items-center gap-2">○ Ultra-Low Latency Real-time WebSocket Streaming</li>
+                        <li class="flex items-center gap-2">○ EPUB and Kindle eBook Native Parsers</li>
+                        <li class="flex items-center gap-2">○ Dockerized Kubernetes Cloud Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 14. MEET THE CREATOR ==================== -->
+        <section id="creator" class="glass-panel p-8 md:p-10 space-y-8 border-indigo-500/40 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-purple-400 uppercase tracking-wider">
+                    <i data-lucide="user-check" class="w-4 h-4"></i>
+                    Meet the Creator
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">About the Engineer</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Creator Photo & Quick Badges -->
+                <div class="lg:col-span-4 flex flex-col items-center text-center space-y-4">
+                    <div class="relative group">
+                        <div class="w-40 h-40 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
+                            <img src="{{ url_for('static', filename='images/mypic.jpeg') }}" alt="R.M.Nishant Suman" class="w-full h-full rounded-full object-cover bg-slate-900">
+                        </div>
+                        <span class="absolute bottom-2 right-2 px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[10px] uppercase tracking-wider border-2 border-[#0A0D14] flex items-center gap-1 shadow">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                            ACTIVE
+                        </span>
+                    </div>
+
+                    <div class="space-y-1">
+                        <h3 class="text-xl font-extrabold text-white tracking-tight">R.M.Nishant Suman</h3>
+                        <p class="text-xs font-semibold text-indigo-400">AI / ML Engineer & Speech AI Architect</p>
+                        <p class="text-[11px] font-mono text-slate-400 flex items-center justify-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3 text-pink-400"></i>
+                            India • Open to Collaborations
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bio & Technical Competencies -->
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="space-y-3">
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Hello! I am <strong class="text-white font-bold">R.M.Nishant Suman</strong>, an AI and Machine Learning Engineer specializing in <strong class="text-indigo-300">Deep Learning, Speech Synthesis, Acoustic Modeling, and Computer Vision</strong>.
+                        </p>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            I engineered <strong>Readora AI</strong> from first principles to bridge the gap between noisy physical documents and expressive, natural human voice synthesis. My engineering philosophy focuses on building robust ML pipelines where preprocessing quality, neural modeling, low-latency inference, and software architecture work harmoniously.
+                        </p>
+                    </div>
+
+                    <!-- Skills Matrix Badges -->
+                    <div class="space-y-2">
+                        <p class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">CORE DOMAINS & TECH STACK:</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <span class="px-3 py-1 rounded-lg bg-indigo-950/70 border border-indigo-500/30 text-indigo-200">PyTorch & Deep Learning</span>
+                            <span class="px-3 py-1 rounded-lg bg-purple-950/70 border border-purple-500/30 text-purple-200">Speech Acoustics & Vocoders</span>
+                            <span class="px-3 py-1 rounded-lg bg-pink-950/70 border border-pink-500/30 text-pink-200">OpenCV & Computer Vision</span>
+                            <span class="px-3 py-1 rounded-lg bg-cyan-950/70 border border-cyan-500/30 text-cyan-200">EasyOCR & NLP Cleaning</span>
+                            <span class="px-3 py-1 rounded-lg bg-emerald-950/70 border border-emerald-500/30 text-emerald-200">Flask REST API & Web Architecture</span>
+                            <span class="px-3 py-1 rounded-lg bg-amber-950/70 border border-amber-500/30 text-amber-200">UV Package Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Connect Row -->
+                    <div class="pt-3 border-t border-slate-800 flex flex-wrap items-center gap-3">
+                        <a href="mailto:rmnishantsuman@gmail.com" class="btn-gradient-primary text-xs py-2 px-4 flex items-center gap-2">
+                            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                            <span>rmnishantsuman@gmail.com</span>
+                        </a>
+                        <a href="tel:+919508222833" class="btn-secondary-dark text-xs py-2 px-4 flex items-center gap-2">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <span>+91 9508222833</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 15. CONTACT & GET IN TOUCH ==================== -->
+        <section id="contact" class="glass-panel p-8 space-y-6 border-indigo-500/30">
+            <div class="text-center space-y-2">
+                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    Get In Touch
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">Let's Connect & Collaborate</h2>
+                <p class="text-xs text-slate-400 max-w-lg mx-auto">
+                    Interested in AI/ML engineering, Speech synthesis, Computer Vision, or discussing project architecture? Reach out directly:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <a href="mailto:rmnishantsuman@gmail.com" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 flex items-center gap-4 transition group">
+                    <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 group-hover:scale-110 transition">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-mono text-slate-400 uppercase">EMAIL ADDRESS</p>
+                        <p class="text-xs font-bold text-white font-mono mt-0.5">rmnishantsuman@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="tel:+919508222833" class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-4 transition group">
+                    <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-mono text-slate-400 uppercase">PHONE NUMBER</p>
+                        <p class="text-xs font-bold text-white font-mono mt-0.5">+91 9508222833</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== 15. FOOTER / PERSONAL ATTRIBUTION ==================== -->
+        <footer class="pt-12 pb-16 border-t border-white/10 text-center space-y-6">
+            <div class="space-y-2">
+                <p class="text-xs font-mono uppercase tracking-widest text-indigo-400 font-bold">BUILT BY R.M.NISHANT SUMAN</p>
+                <h3 class="text-2xl font-extrabold text-white">Readora AI Speech & Vision System</h3>
+                <p class="text-xs text-slate-400 max-w-xl mx-auto">
+                    This project represents my journey into AI, speech technology, computer vision, and building full-stack production systems from the ground up.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a href="mailto:rmnishantsuman@gmail.com" class="btn-secondary-dark text-xs py-2 px-4 flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="tel:+919508222833" class="btn-secondary-dark text-xs py-2 px-4 flex items-center gap-1.5">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Call / WhatsApp</span>
+                </a>
+                <a href="#hero" class="btn-secondary-dark text-xs py-2 px-4 flex items-center gap-1.5">
+                    <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                    <span>Back to Top</span>
+                </a>
+                <a href="#demo" class="btn-gradient-primary text-xs py-2 px-4 flex items-center gap-1.5">
+                    <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                    <span>Launch Live Studio</span>
+                </a>
+            </div>
+
+            <p class="text-[11px] text-slate-500 font-mono pt-6">
+                © 2026 R.M.Nishant Suman • Readora AI • Powered by PyTorch, OpenCV, Flask & UV
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Hidden Audio Player for Demo Samples -->
+    <audio id="demoAudioPlayer" class="hidden"></audio>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <!-- Application Logic -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
