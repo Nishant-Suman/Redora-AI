@@ -22,6 +22,7 @@ dependencies = [
     "matplotlib>=3.7.0",
     "numpy>=1.24.0",
     "nest-asyncio>=1.6.0",
+    "gunicorn>=26.2.0",
 ]
 
 [tool.uv]
